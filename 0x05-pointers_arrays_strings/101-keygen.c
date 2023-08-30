@@ -25,7 +25,7 @@ password[length] = '\0';
 
 int main(void)
 {
-char password[9]; // Assuming maximum password length of 8 characters
+char password[9]; /* Assuming maximum password length of 8 characters */
 
 generate_password(password, 8);
 printf("%s\n", password);
