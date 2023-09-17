@@ -1,47 +1,30 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
-* _strcat - Concatenates the src string to the dest string.
-* @dest: The destination string.
-* @src: The source string.
-*
-* Return: Pointer to the resulting string dest.
-*/
-char *_strcat(char *dest, const char *src)
+ * _strcat - Function that concatenates two strings
+ * @dest: Destination string point
+ * @src: Source string point
+ * Return: void
+ */
+
+char *_strcat(char *dest, char *src)
 {
-int destLength = 0;
-int i = 0;
+	int i;
+	int j;
 
-/* Find the length of the dest string */
-while (dest[destLength] != '\0')
-{
-destLength++;
-}
+	i = 0;
+	while (dest[i] != '\0')
+	{
+		i++;
+	}
+	j = 0;
+	while (src[j] != '\0')
+	{
+		dest[i] = src[j];
+		i++;
+		j++;
+	}
 
-/* Copy the characters from src to dest */
-while (src[i] != '\0')
-{
-dest[destLength] = src[i];
-destLength++;
-i++;
-}
-
-dest[destLength] = '\0'; /* Add the terminating null byte to the string */
-return (dest); /* Return the pointer to the resulting string dest */
-}
-
-/**
-* main - Entry point of the program. Concatenates 2 strings and prints d result
-*
-* Return: Always 0.
-*/
-int main(void)
-{
-char dest[100] = "Hello, ";
-const char src[] = "world!";
-
-_strcat(dest, src);
-printf("Concatenated string: %s\n", dest);
-
-return (0);
+	dest[i] = '\0';
+	return (dest);
 }
